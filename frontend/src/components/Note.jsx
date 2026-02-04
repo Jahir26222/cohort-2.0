@@ -10,7 +10,7 @@ const navigate = useNavigate()
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const res = await axios.get("https://cohort-2-0-scg1.onrender.com//api/notes");
+        const res = await axios.get("https://cohort-2-0-scg1.onrender.com/api/notes");
         // console.log(res.data.AllNote)
         setNote(res.data.AllNote);
       } catch (error) {
@@ -24,7 +24,7 @@ const navigate = useNavigate()
   // DELETE HANDLER
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://cohort-2-0-scg1.onrender.com//api/notes/${id}`);
+      await axios.delete(`https://cohort-2-0-scg1.onrender.com/api/notes/${id}`);
 
       setNote((prevNotes) =>
         prevNotes.filter((note) => note._id !== id)
@@ -36,7 +36,7 @@ const navigate = useNavigate()
 
   return (
     <div className="container">
-      {note.map((note) => (
+      {note?.map((note) => (
         <div className="card" key={note._id}>
           <div className="title">
             <h2>{note.title}</h2>

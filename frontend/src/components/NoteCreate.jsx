@@ -11,7 +11,7 @@ const NoteCreate = () => {
   const handleSubmit = async (e) =>{
     e.preventDefault();
 
-    await axios.post('https://cohort-2-0-scg1.onrender.com//api/notes',{
+    await axios.post('https://cohort-2-0-scg1.onrender.com/api/notes',{
       title : title,
       description : desc ,
     });
