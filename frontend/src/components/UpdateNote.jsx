@@ -13,7 +13,7 @@ const UpdateNote = () => {
         const handleUpdate = async () => {
 
 
-            const res = await axios.get(`http://localhost:8000/api/notes/${id}`);
+            const res = await axios.get(`https://cohort-2-0-scg1.onrender.com//api/notes/${id}`);
             // console.log(res.data.note)
             setTitle(res.data.note.title)
             setDesc(res.data.note.description)
@@ -28,7 +28,7 @@ const UpdateNote = () => {
     const handleSubmite = async (e)=>{
         e.preventDefault();
 
-        await axios.put(`http://localhost:8000/api/notes/${id}`,{
+        await axios.put(`https://cohort-2-0-scg1.onrender.com//api/notes/${id}`,{
             title : title,
             description : desc
         })
